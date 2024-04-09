@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb1afd9-2fb4-43cb-b451-061bd48a63ef" name="Changes" comment="" />
+    <list default="true" id="8eb1afd9-2fb4-43cb-b451-061bd48a63ef" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nkcdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/SchedulingApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,13 +35,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nkcdev.scheduling" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nkcdev.App" />
+    <configuration name="SchedulingApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nkcdev.scheduling.SchedulingApp" />
       <module name="SchedulingApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.nkcdev.*" />
+          <option name="PATTERN" value="com.nkcdev.scheduling.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -41,7 +56,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
+        <item itemvalue="Application.SchedulingApp" />
       </list>
     </recent_temporary>
   </component>
@@ -54,6 +69,19 @@
       <option name="presentableId" value="Default" />
       <updated>1712646190732</updated>
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1712646299336</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712646299336</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>
