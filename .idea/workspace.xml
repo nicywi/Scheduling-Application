@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb1afd9-2fb4-43cb-b451-061bd48a63ef" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nkcdev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/SchedulingApp.java" afterDir="false" />
+    <list default="true" id="8eb1afd9-2fb4-43cb-b451-061bd48a63ef" name="Changes" comment="impl Meeting class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/SchedulingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/SchedulingApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +77,29 @@
       <option name="project" value="LOCAL" />
       <updated>1712646299336</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="impl Person class">
+      <option name="closed" value="true" />
+      <created>1712647253628</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712647253628</updated>
+    </task>
+    <task id="LOCAL-00003" summary="impl Meeting class">
+      <option name="closed" value="true" />
+      <created>1712647435116</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712647435116</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="impl Person class" />
+    <MESSAGE value="impl Meeting class" />
+    <option name="LAST_COMMIT_MESSAGE" value="impl Meeting class" />
   </component>
 </project>
