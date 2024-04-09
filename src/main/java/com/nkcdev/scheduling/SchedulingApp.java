@@ -1,10 +1,10 @@
-package com.nkcdev;
+package com.nkcdev.scheduling;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class SchedulingApp
 {
     public static void main( String[] args )
     {
