@@ -37,6 +37,16 @@ public class SchedulingApp {
         return null; // Person not found
     }
 
+    private void createMeeting(List<Person> participants, LocalDateTime startTime) {
+        if (startTime.getMinute() != 0 || startTime.getSecond() != 0) {
+            System.out.println("Meeting can only start at the hour mark.");
+            return;
+        }
+
+        meetings.add(new Meeting(participants, startTime));
+        System.out.println("Meeting scheduled at " + startTime.toString());
+    }
+
     public static void main( String[] args ) {
         SchedulingApp app = new SchedulingApp();
         Scanner scanner = new Scanner(System.in);
@@ -76,7 +86,7 @@ public class SchedulingApp {
                     System.out.println("Enter meeting start date and time (yyyy-MM-dd HH:mm):");
                     String dateTimeStr = scanner.nextLine();
                     LocalDateTime startTime = LocalDateTime.parse(dateTimeStr);
-//                    app.createMeeting(participants, startTime);
+                    app.createMeeting(participants, startTime);
                     break;
                 case 3:
                     System.out.println("Enter person's email:");
@@ -106,5 +116,6 @@ public class SchedulingApp {
         }
     }
 
-    }
+
+}
 
