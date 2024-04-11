@@ -26,11 +26,10 @@ public class Scheduler {
 
     // Create a new meeting with participants and start time
     public void createMeeting(List<Person> participants, LocalDateTime startTime) {
-        if (startTime.getMinute() != 0 || startTime.getSecond() != 0) {
+        if (startTime.getMinute() != 0 || startTime.getSecond() != 0 || startTime.getNano() != 0) {
             System.out.println("Meeting can only start at the hour mark. Please try again.");
             return;
         }
-
         meetings.add(new Meeting(participants, startTime));
         String formattedStartTime = startTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
         System.out.println("Meeting scheduled at " + formattedStartTime);
@@ -46,7 +45,8 @@ public class Scheduler {
         System.out.println("Schedule for " + persons.get(email).getName() + ":");
         for (Meeting meeting : meetings) {
             if (meeting.getParticipants().contains(persons.get(email))) {
-                System.out.println("Meeting at " + meeting.getStartTime().toString());
+                String formattedStartTime = meeting.getStartTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+                System.out.println("Meeting at " + formattedStartTime);
             }
         }
     }
