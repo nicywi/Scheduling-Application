@@ -14,7 +14,4 @@ public class Person {
         return name;
     }
 
-    public String getEmail() {
-        return email;
-    }
 }

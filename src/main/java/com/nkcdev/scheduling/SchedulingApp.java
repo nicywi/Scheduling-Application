@@ -15,7 +15,7 @@ public class SchedulingApp {
         scheduler.createPerson("Alice", "alice@example.com");
         scheduler.createPerson("Bob", "bob@example.com");
 
-        // Create a meetings
+        // Create meetings
         List<Person> participants = new ArrayList<>();
         participants.add(scheduler.getPersons().get("alice@example.com"));
         participants.add(scheduler.getPersons().get("bob@example.com"));
