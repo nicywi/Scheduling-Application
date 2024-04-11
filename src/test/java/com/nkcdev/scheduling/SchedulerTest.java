@@ -5,8 +5,9 @@ import org.junit.Test;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.*;
 
 public class SchedulerTest {
     @Test
@@ -76,4 +77,38 @@ public class SchedulerTest {
         // Since there's a meeting scheduled for tomorrow, no timeslots should be suggested
         assertEquals(0, scheduler.getMeetings().size());
     }
+
+    @Test
+    public void testGetPersons() {
+        Scheduler scheduler = new Scheduler();
+        scheduler.createPerson("Alice", "alice@example.com");
+        scheduler.createPerson("Bob", "bob@example.com");
+
+        Map<String, Person> persons = scheduler.getPersons();
+
+        assertNotNull(persons);
+        assertEquals(2, persons.size());
+        assertTrue(persons.containsKey("alice@example.com"));
+        assertTrue(persons.containsKey("bob@example.com"));
+    }
+
+    @Test
+    public void testGetMeetings() {
+        Scheduler scheduler = new Scheduler();
+        List<Person> participants = List.of(
+                new Person("Alice", "alice@example.com"),
+                new Person("Bob", "bob@example.com")
+        );
+        LocalDateTime startTime = LocalDateTime.now().plusDays(0).withHour(10).withMinute(0).withSecond(0).withNano(0);
+        LocalDateTime startTime2 = LocalDateTime.now().plusDays(0).withHour(11).withMinute(0).withSecond(0).withNano(0);
+        scheduler.createMeeting(participants, startTime);
+        scheduler.createMeeting(participants, startTime2);
+
+        List<Meeting> meetings = scheduler.getMeetings();
+
+        assertNotNull(meetings);
+        assertEquals(2, meetings.size());
+    }
+
+
 }
