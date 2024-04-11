@@ -4,85 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-// SchedulingApp class containing main functionalities
+// SchedulingApp class for user interactions
 public class SchedulingApp {
-    private Map<String, Person> persons; // Mapping of email to Person object
-    private List<Meeting> meetings; // List to store scheduled meetings
-
-    public SchedulingApp() {
-        persons = new HashMap<>();
-        meetings = new ArrayList<>();
-    }
-
-    // Create a new person with name and email
-    public void createPerson(String name, String email) {
-        if (!persons.containsKey(email)) {
-            persons.put(email, new Person(name, email));
-            System.out.println("Person created: " + name);
-        } else {
-            System.out.println("Email already exists. Please try again.");
-            // Prompt user to enter email again
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter person's email:");
-            String newEmail = scanner.nextLine();
-            createPerson(name, newEmail); // Recursively call createPerson with new email
-        }
-    }
-
-
-    private void createMeeting(List<Person> participants, LocalDateTime startTime) {
-        if (startTime.getMinute() != 0 || startTime.getSecond() != 0) {
-            System.out.println("Meeting can only start at the hour mark. Please try again.");
-            return;
-        }
-
-        meetings.add(new Meeting(participants, startTime));
-        String formattedStartTime = startTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
-        System.out.println("Meeting scheduled at " + formattedStartTime);
-    }
-
-    // Show upcoming meetings for a given person
-    public void showSchedule(String email) {
-        if (!persons.containsKey(email)) {
-            System.out.println("Person with email " + email + " not found.");
-            return;
-        }
-
-        System.out.println("Schedule for " + persons.get(email).getName() + ":");
-        for (Meeting meeting : meetings) {
-            if (meeting.getParticipants().contains(persons.get(email))) {
-                System.out.println("Meeting at " + meeting.getStartTime().toString());
-            }
-        }
-    }
-    // Suggest available timeslots for a meeting given a group of persons
-    public void suggestTimeslots(List<Person> participants) {
-        System.out.println("Available timeslots for meeting:");
-        for (int hour = 0; hour <= 23; hour++) {
-//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-            LocalDateTime startTime = LocalDateTime.now().withHour(hour).withMinute(0).withSecond(0).withNano(0);
-            LocalDateTime endTime = startTime.plusHours(1);
-//            String formattedStartTime = startTime.format(formatter);
-
-            boolean available = true;
-            for (Meeting meeting : meetings) {
-                LocalDateTime meetingStart = meeting.getStartTime();
-                LocalDateTime meetingEnd = meetingStart.plusHours(1);
-
-                // Check if the proposed meeting slot overlaps with any existing meeting
-                if (startTime.isEqual(meetingStart) && endTime.isEqual(meetingEnd)) {
-                    available = false;
-                    break;
-                }
-            }
-            if (available) {
-                System.out.println(startTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
-            }
-        }
-    }
-
     public static void main( String[] args ) {
-        SchedulingApp app = new SchedulingApp();
+        Scheduler app = new Scheduler();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Scheduling Application Demo!");
@@ -127,7 +52,6 @@ public class SchedulingApp {
                     }
                     LocalDateTime startTime = LocalDateTime.parse(dateTimeStr, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
                     app.createMeeting(participants, startTime);
-//                    LocalDateTime startTime = LocalDateTime.parse(dateTimeStr);
                     break;
                 case 3:
                     System.out.println("Enter person's email:");

@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eb1afd9-2fb4-43cb-b451-061bd48a63ef" name="Changes" comment="showSchedule &amp; suggestTimeslots added">
+    <list default="true" id="8eb1afd9-2fb4-43cb-b451-061bd48a63ef" name="Changes" comment="bug fixing in suggest time, time formating, try again for create person added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/Scheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/nkcdev/scheduling/SchedulerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/SchedulingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/SchedulingApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,9 +43,8 @@
       <recent name="com.nkcdev.scheduling" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="SchedulingApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nkcdev.scheduling.SchedulingApp" />
+  <component name="RunManager" selected="JUnit.SchedulerTest">
+    <configuration name="SchedulerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SchedulingApplication" />
       <extension name="coverage">
         <pattern>
@@ -50,13 +52,84 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.nkcdev.scheduling" />
+      <option name="MAIN_CLASS_NAME" value="com.nkcdev.scheduling.SchedulerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.testCreateMeeting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SchedulingApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nkcdev.scheduling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nkcdev.scheduling" />
+      <option name="MAIN_CLASS_NAME" value="com.nkcdev.scheduling.SchedulerTest" />
+      <option name="METHOD_NAME" value="testCreateMeeting" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.testCreatePerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SchedulingApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nkcdev.scheduling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nkcdev.scheduling" />
+      <option name="MAIN_CLASS_NAME" value="com.nkcdev.scheduling.SchedulerTest" />
+      <option name="METHOD_NAME" value="testCreatePerson" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.testShowSchedule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SchedulingApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nkcdev.scheduling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nkcdev.scheduling" />
+      <option name="MAIN_CLASS_NAME" value="com.nkcdev.scheduling.SchedulerTest" />
+      <option name="METHOD_NAME" value="testShowSchedule" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulerTest.testSuggestTimeslots" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SchedulingApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nkcdev.scheduling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nkcdev.scheduling" />
+      <option name="MAIN_CLASS_NAME" value="com.nkcdev.scheduling.SchedulerTest" />
+      <option name="METHOD_NAME" value="testSuggestTimeslots" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SchedulingApp" />
+        <item itemvalue="JUnit.SchedulerTest" />
+        <item itemvalue="JUnit.SchedulerTest.testShowSchedule" />
+        <item itemvalue="JUnit.SchedulerTest.testSuggestTimeslots" />
+        <item itemvalue="JUnit.SchedulerTest.testCreateMeeting" />
+        <item itemvalue="JUnit.SchedulerTest.testCreatePerson" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712780503668</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="bug fixing in suggest time, time formating, try again for create person added">
+      <option name="closed" value="true" />
+      <created>1712821807126</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712821807126</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -127,17 +208,7 @@
     <MESSAGE value="console demo template" />
     <MESSAGE value="createMeeting added" />
     <MESSAGE value="showSchedule &amp; suggestTimeslots added" />
-    <option name="LAST_COMMIT_MESSAGE" value="showSchedule &amp; suggestTimeslots added" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nkcdev/scheduling/SchedulingApp.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="bug fixing in suggest time, time formating, try again for create person added" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixing in suggest time, time formating, try again for create person added" />
   </component>
 </project>
