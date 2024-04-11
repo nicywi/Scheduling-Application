@@ -20,18 +20,25 @@ public class SchedulingApp {
             persons.put(email, new Person(name, email));
             System.out.println("Person created: " + name);
         } else {
-            System.out.println("Email already exists.");
+            System.out.println("Email already exists. Please try again.");
+            // Prompt user to enter email again
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter person's email:");
+            String newEmail = scanner.nextLine();
+            createPerson(name, newEmail); // Recursively call createPerson with new email
         }
     }
 
+
     private void createMeeting(List<Person> participants, LocalDateTime startTime) {
         if (startTime.getMinute() != 0 || startTime.getSecond() != 0) {
-            System.out.println("Meeting can only start at the hour mark.");
+            System.out.println("Meeting can only start at the hour mark. Please try again.");
             return;
         }
 
         meetings.add(new Meeting(participants, startTime));
-        System.out.println("Meeting scheduled at " + startTime.toString());
+        String formattedStartTime = startTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+        System.out.println("Meeting scheduled at " + formattedStartTime);
     }
 
     // Show upcoming meetings for a given person
@@ -52,20 +59,24 @@ public class SchedulingApp {
     public void suggestTimeslots(List<Person> participants) {
         System.out.println("Available timeslots for meeting:");
         for (int hour = 0; hour <= 23; hour++) {
-            LocalDateTime startTime = LocalDateTime.now().withHour(hour).withMinute(0).withSecond(0);
+//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            LocalDateTime startTime = LocalDateTime.now().withHour(hour).withMinute(0).withSecond(0).withNano(0);
+            LocalDateTime endTime = startTime.plusHours(1);
+//            String formattedStartTime = startTime.format(formatter);
+
             boolean available = true;
             for (Meeting meeting : meetings) {
-                if (meeting.getStartTime().isEqual(startTime) || // Meeting starts at this hour
-                        (meeting.getStartTime().isAfter(startTime) && // Meeting starts after this hour
-                                meeting.getStartTime().isBefore(startTime.plusHours(1))) || // but before next hour
-                        (meeting.getStartTime().plusHours(1).isAfter(startTime) && // Meeting ends after this hour
-                                meeting.getStartTime().plusHours(1).isBefore(startTime.plusHours(1)))) { // but before next hour
+                LocalDateTime meetingStart = meeting.getStartTime();
+                LocalDateTime meetingEnd = meetingStart.plusHours(1);
+
+                // Check if the proposed meeting slot overlaps with any existing meeting
+                if (startTime.isEqual(meetingStart) && endTime.isEqual(meetingEnd)) {
                     available = false;
                     break;
                 }
             }
             if (available) {
-                System.out.println(startTime.toString());
+                System.out.println(startTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
             }
         }
     }
